@@ -70,14 +70,13 @@ end
 
 --- Create a reset task.
 --- @param cwd string
---- @param branch string
 --- @param callback function?
-function M.reset(cwd, branch, callback)
+function M.reset(cwd, callback)
     if callback ~= nil then
         callback()
     end
 
-    return Pipeline.create_task(cwd, 'git', { 'reset', '--hard', table.concat({ 'origin', branch }, '/') })
+    return Pipeline.create_task(cwd, 'git', { 'reset', '--hard', table.concat({ 'origin' }, '/') })
 end
 
 return M

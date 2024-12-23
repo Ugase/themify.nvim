@@ -350,7 +350,7 @@ function M.update_colorscheme(colorscheme_id)
                     Event.emit('state_update')
                 else
                     local pipeline = Pipeline:new({
-                        Tasks.reset(colorscheme_data.path, colorscheme_data.repository.branch, function()
+                        Tasks.reset(colorscheme_data.path, function()
                             Event.emit('window_update')
 
                             colorscheme_data.progress = 25
