@@ -26,14 +26,13 @@ end
 
 --- Create a pull task.
 --- @param cwd string
---- @param branch string
 --- @param callback function?
-function M.pull(cwd, branch, callback)
+function M.pull(cwd, callback)
     if callback ~= nil then
         callback()
     end
 
-    return Pipeline.create_task(cwd, 'git', { 'pull', '-X', 'theirs', 'origin', branch, '--progress' })
+    return Pipeline.create_task(cwd, 'git', { 'pull', '-X', 'theirs', 'origin', '--progress' })
 end
 
 --- Create a clone task.
