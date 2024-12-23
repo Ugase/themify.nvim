@@ -356,7 +356,7 @@ function M.update_colorscheme(colorscheme_id)
                             colorscheme_data.progress = 25
                             colorscheme_data.info = 'Reseting...'
                         end),
-                        Tasks.pull(colorscheme_data.path, colorscheme_data.repository.branch, function()
+                        Tasks.pull(colorscheme_data.path, function()
                             Event.emit('window_update')
 
                             colorscheme_data.progress = 50
